@@ -1,0 +1,18 @@
+#.vscode settings
+.vscode/*
+
+# output files
+*.o
+
+# compilation result file
+*.so
+
+# linux driver file
+*.mod
+*.mod.c
+*.orders
+*.symvers
+*.ko
+*.order
+*.cmd
+
