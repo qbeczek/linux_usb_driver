@@ -34,7 +34,7 @@ static ssize_t my_read(struct file *File, char *user_buffer, size_t count,
     //     0xc0,
     //                          0, 0, (unsigned char *)&val, 1, 100,
     //                          GFP_KERNEL);
-    usb_clear_halt(usb_dev, usb_rcvbulkpipe(usb_dev, 1));
+    // usb_clear_halt(usb_dev, usb_rcvbulkpipe(usb_dev, 1));
 
     bulk_buffer = kzalloc(64, GFP_KERNEL);
     if (!bulk_buffer) return -ENOMEM;
@@ -47,7 +47,6 @@ static ssize_t my_read(struct file *File, char *user_buffer, size_t count,
     }
 
     printk("usb_driver: receive transferred bits: %d\n", transferred);
-    printk("%d", bulk_buffer[0]);
 
     sprintf(text, "0x%x\n", bulk_buffer[0]);
 
